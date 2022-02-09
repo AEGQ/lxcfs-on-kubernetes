@@ -1,5 +1,5 @@
-{{- $ca := genCA "lxcfs-on-kubernetes-ca" 3650 }}
-{{- $cn := "lxcfs-on-kubernetes-webhook-service" }}
+{{- $ca := genCA "lxcfs-lxcfs-on-kubernetes-webhook-service-ca" 3650 }}
+{{- $cn := "lxcfs-lxcfs-on-kubernetes-webhook-service" }}
 {{- $dns1 := printf "%s.%s" $cn .Release.Namespace }}
 {{- $dns2 := printf "%s.%s.svc" $cn .Release.Namespace }}
 {{- $cert := genSignedCert $cn nil (list $dns1 $dns2) 3650 $ca }}
